@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frame & Signal | Creative Agency</title>
+  <style>
+    :root{--bg:#0a0a0a;--lime:#bef264;--text:#fafafa;--muted:#a3a3a3;--font:"Arial Black",Impact,sans-serif;--body:"Segoe UI",system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0}
+    body{font-family:var(--body);background:var(--bg);color:var(--text)}
+    header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem;border-bottom:1px solid #262626}
+    .logo{font-family:var(--font);font-size:1rem;letter-spacing:.06em;text-transform:uppercase}
+    .logo span{color:var(--lime)}
+    nav a{color:var(--muted);text-decoration:none;font-size:.8rem;font-weight:700;margin-left:1rem}
+    .hero{padding:4rem 1.25rem 2rem}
+    .hero h1{font-family:var(--font);font-size:clamp(2.5rem,8vw,5rem);line-height:.95;text-transform:uppercase;max-width:12ch}
+    .hero h1 em{font-style:normal;color:var(--lime);display:block}
+    .hero p{margin-top:1.25rem;color:var(--muted);max-width:26rem}
+    .grid{display:grid;gap:1px;background:#262626;margin:2rem 1.25rem 3rem}
+    @media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+    .work{aspect-ratio:4/3;background:#171717;padding:1.25rem;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;transition:.2s}
+    .work:hover{background:#1f1f1f;outline:2px solid var(--lime)}
+    .work span{font-size:.7rem;color:var(--lime);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .work h3{font-family:var(--font);font-size:1.4rem;margin-top:.35rem;text-transform:uppercase}
+    .cta-bar{padding:1.25rem;border-top:1px solid #262626;display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+    .cta-bar a{padding:.85rem 1.4rem;background:var(--lime);color:#0a0a0a;font-weight:900;text-decoration:none;text-transform:uppercase;font-size:.8rem}
+    .demo-tag{position:fixed;top:.5rem;left:50%;transform:translateX(-50%);background:#1f1f1f;color:var(--lime);padding:.3rem .7rem;border-radius:0;font-size:.65rem;font-weight:800;letter-spacing:.12em}
+    .fit-panel{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:1rem}
+    .fit-panel.open{display:flex}
+    .fit-box{max-width:24rem;width:100%;border:2px solid var(--lime);padding:1.5rem;background:#111}
+    .fit-box h3{font-family:var(--font);text-transform:uppercase;margin-bottom:1rem}
+    .fit-box label{display:block;font-size:.8rem;color:var(--muted);margin:.75rem 0 .25rem}
+    .fit-box input,.fit-box select{width:100%;padding:.6rem;background:#0a0a0a;border:1px solid #333;color:#fff}
+    .fit-box button{margin-top:1rem;width:100%;padding:.75rem;background:var(--lime);border:none;font-weight:900;cursor:pointer}
+  </style>
+</head>
+<body>
+  <span class="demo-tag">SOLVEONX DEMO · CREATIVE AGENCY</span>
+  <header>
+    <div class="logo">Frame <span>&</span> Signal</div>
+    <nav><a href="#">Work</a><a href="#">Studio</a><a href="#" id="open-fit">Start project</a></nav>
+  </header>
+  <section class="hero">
+    <h1>Brands that <em>move</em> markets</h1>
+    <p>Portfolio site with inbound fit-screening — budget, timeline, and scope captured before discovery calls.</p>
+  </section>
+  <div class="grid">
+    <article class="work" style="background:linear-gradient(180deg,transparent,#171717),#2d1b4e"><span>Brand</span><h3>Retail relaunch</h3></article>
+    <article class="work" style="background:linear-gradient(180deg,transparent,#171717),#1e3a5f"><span>Web</span><h3>SaaS product site</h3></article>
+    <article class="work" style="background:linear-gradient(180deg,transparent,#171717),#3f1d1d"><span>Campaign</span><h3>Festival drop</h3></article>
+    <article class="work" style="background:linear-gradient(180deg,transparent,#171717),#1a3d2e"><span>Automation</span><h3>Lead gen stack</h3></article>
+  </div>
+  <div class="cta-bar">
+    <span style="color:var(--muted);font-size:.85rem">10+ hours saved monthly on weak-fit discovery calls</span>
+    <a href="#" id="cta-fit">Project fit check</a>
+  </div>
+  <div class="fit-panel" id="fit-panel">
+    <div class="fit-box">
+      <h3>Project fit check</h3>
+      <label>What do you need?</label>
+      <select><option>Website + brand</option><option>Automation support</option><option>Full growth retainer</option></select>
+      <label>Timeline</label>
+      <input type="text" value="Within 6 weeks">
+      <label>Budget band</label>
+      <select><option>Mid-market</option><option>Startup</option><option>Enterprise</option></select>
+      <button type="button" onclick="demoToast('Demo: Structured brief sent to founder + WhatsApp handoff');document.getElementById('fit-panel').classList.remove('open')">Submit & book discovery</button>
+    </div>
+  </div>
+  <script>
+    const panel=document.getElementById("fit-panel");
+    document.getElementById("open-fit").onclick=e=>{e.preventDefault();panel.classList.add("open");};
+    document.getElementById("cta-fit").onclick=e=>{e.preventDefault();panel.classList.add("open");};
+    panel.onclick=e=>{if(e.target===panel)panel.classList.remove("open");};
+  </script>
+  <link rel="stylesheet" href="demo-common.css">
+  <script src="demo-common.js"></script>
+</body>
+</html>

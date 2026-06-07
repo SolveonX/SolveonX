@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solveonx.com/sitemap.xml

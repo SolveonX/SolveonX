@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExcelEdge Coaching | South Delhi</title>
+  <style>
+    :root{--teal:#0d9488;--coral:#f97316;--cream:#fff7ed;--text:#134e4a;--muted:#5f6b6a;--font:"Segoe UI",system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0}
+    body{font-family:var(--font);background:var(--cream);color:var(--text)}
+    .top{background:var(--teal);color:#fff;padding:.45rem 1rem;text-align:center;font-size:.78rem;font-weight:700}
+    header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;background:#fff;border-bottom:3px solid var(--coral)}
+    .logo{font-weight:800;font-size:1.15rem;color:var(--teal)}
+    .nav{font-size:.82rem;font-weight:600;color:var(--muted);display:flex;gap:1rem}
+    .hero{display:grid;gap:1.5rem;padding:2rem 1.25rem 2.5rem;align-items:center}
+    @media(min-width:768px){.hero{grid-template-columns:1.1fr .9fr;padding:3rem 2rem}}
+    h1{font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15}
+    .hero p{color:var(--muted);margin-top:.75rem}
+    .pill-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+    .pill{padding:.35rem .7rem;border-radius:999px;background:#ccfbf1;font-size:.75rem;font-weight:700;color:var(--teal)}
+    .cta{margin-top:1.25rem;display:inline-flex;padding:.8rem 1.3rem;border-radius:12px;background:var(--coral);color:#fff;font-weight:800;text-decoration:none;font-size:.9rem}
+    .chat{background:#fff;border-radius:20px;padding:1rem;box-shadow:0 16px 50px rgba(13,148,136,.15);border:1px solid #d1fae5}
+    .bubble{padding:.7rem .85rem;border-radius:14px;font-size:.85rem;margin-bottom:.5rem;max-width:90%}
+    .in{background:#f0fdfa;color:var(--text)}
+    .out{margin-left:auto;background:var(--teal);color:#fff}
+    .demo-tag{position:fixed;top:2.2rem;right:.75rem;background:#ccfbf1;color:var(--teal);padding:.25rem .6rem;border-radius:999px;font-size:.65rem;font-weight:800;z-index:2}
+    .batches{display:grid;gap:1rem;padding:0 1.25rem 3rem;max-width:48rem;margin:0 auto}
+    @media(min-width:600px){.batches{grid-template-columns:repeat(2,1fr)}}
+    .batch{background:#fff;border-radius:16px;padding:1rem;border-left:4px solid var(--coral)}
+    .batch h3{font-size:.95rem;margin-bottom:.25rem}
+    .batch p{font-size:.8rem;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="top">Admissions open · Weekend & weekday batches · South Delhi</div>
+  <span class="demo-tag">SOLVEONX DEMO · COACHING</span>
+  <header>
+    <div class="logo">ExcelEdge Coaching</div>
+    <div class="nav"><span>Courses</span><span>Results</span><span>Admissions</span></div>
+  </header>
+  <section class="hero">
+    <div>
+      <h1>Weekend batches for working learners in South Delhi</h1>
+      <p>AI admissions assistant qualifies course, location, and timeline before your team takes the call.</p>
+      <div class="pill-row"><span class="pill">Digital Marketing</span><span class="pill">Weekend batch</span><span class="pill">Counselling in 18 sec</span></div>
+      <a href="#" class="cta" id="chat-cta">Talk to admissions bot</a>
+    </div>
+    <div class="chat" id="chat">
+      <div class="bubble in">Hi, is admission open for the weekend batch?</div>
+      <div class="bubble out" hidden>Yes! Which course and area are you in?</div>
+      <div class="bubble in" hidden>Digital marketing, South Delhi, this month.</div>
+      <div class="bubble out" hidden>Perfect fit. Book your free counselling call below.</div>
+    </div>
+  </section>
+  <div class="batches">
+    <article class="batch"><h3>Weekend Digital Marketing</h3><p>South Delhi · Next cohort starts soon</p></article>
+    <article class="batch"><h3>Weekday Foundation Track</h3><p>For students building first specialization</p></article>
+  </div>
+  <script>
+    const bubbles=[...document.querySelectorAll("#chat .bubble")];
+    let i=1;
+    document.getElementById("chat-cta").addEventListener("click",function play(e){
+      e.preventDefault();
+      if(i<bubbles.length){bubbles[i].hidden=false;i++;}
+      else{demoToast("Demo: Full flow hands off to WhatsApp admissions with course + location context.");i=1;bubbles.forEach((b,n)=>{b.hidden=n>0;});}
+    });
+  </script>
+  <link rel="stylesheet" href="demo-common.css">
+  <script src="demo-common.js"></script>
+</body>
+</html>
