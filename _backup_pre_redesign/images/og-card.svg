@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#f0f4ff"/>
+  <circle cx="1050" cy="80" r="220" fill="#4f46e5" fill-opacity="0.12"/>
+  <circle cx="120" cy="520" r="260" fill="#059669" fill-opacity="0.14"/>
+  <rect x="80" y="120" width="1040" height="390" rx="28" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="130" y="170" width="72" height="72" rx="16" fill="url(#g)"/>
+  <text x="170" y="218" text-anchor="middle" fill="#fff" font-family="Segoe UI, sans-serif" font-size="28" font-weight="700">SX</text>
+  <text x="230" y="205" fill="#0f172a" font-family="Segoe UI, sans-serif" font-size="42" font-weight="700">SolveonX</text>
+  <text x="230" y="255" fill="#475569" font-family="Segoe UI, sans-serif" font-size="28">WhatsApp-first AI sales systems for Indian SMEs</text>
+  <text x="130" y="340" fill="#059669" font-family="Segoe UI, sans-serif" font-size="52" font-weight="700">Stop losing leads to slow follow-up</text>
+  <text x="130" y="400" fill="#64748b" font-family="Segoe UI, sans-serif" font-size="26">Reply faster · Qualify leads · Sync CRM · Book calls</text>
+  <rect x="130" y="440" width="280" height="56" rx="12" fill="url(#g)"/>
+  <text x="270" y="476" text-anchor="middle" fill="#fff" font-family="Segoe UI, sans-serif" font-size="22" font-weight="700">Get free audit</text>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#059669"/>
+      <stop offset="0.5" stop-color="#0891b2"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+</svg>

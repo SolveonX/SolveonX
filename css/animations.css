@@ -1,0 +1,505 @@
+/* SolveonX — Phase 3 animation utilities */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gradient-text-animated {
+  background: linear-gradient(
+    90deg,
+    #25d366 0%,
+    #6ee7a0 35%,
+    #d4af37 65%,
+    #25d366 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-slow {
+  animation: float-y 5.5s ease-in-out infinite;
+}
+
+/* Rotating gradient border — featured package */
+.featured-package {
+  position: relative;
+  isolation: isolate;
+}
+
+.featured-package::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: calc(var(--radius) + 2px);
+  background: conic-gradient(from var(--border-angle, 0deg), #25d366, #128c7e, #d4af37, #25d366);
+  animation: border-spin 4s linear infinite;
+  opacity: 0.85;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
+}
+
+/* Fallback for browsers without @property */
+@supports not (background: conic-gradient(from 0deg, red, blue)) {
+  .featured-package::after {
+    animation: none;
+    background: linear-gradient(135deg, #25d366, #d4af37);
+  }
+}
+
+/* Cursor spotlight layer */
+.cursor-spotlight {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 40%),
+    rgba(37, 211, 102, 0.16),
+    transparent 55%
+  );
+}
+
+.hero:hover .cursor-spotlight,
+.hero:focus-within .cursor-spotlight {
+  opacity: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sticky audit CTA */
+.sticky-audit {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%) translateY(120%);
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.35);
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.sticky-audit.is-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-audit:hover {
+  color: #fff;
+}
+
+/* WA float pulse */
+.wa-float {
+  animation: wa-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 14px 35px rgba(37, 211, 102, 0.34); }
+  50% { box-shadow: 0 14px 35px rgba(37, 211, 102, 0.55), 0 0 0 10px rgba(37, 211, 102, 0.12); }
+}
+
+/* Exit-intent popup */
+.exit-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.exit-popup.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.exit-popup-panel {
+  width: min(28rem, 100%);
+  padding: 1.75rem;
+  border-radius: 16px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(12px);
+  transition: transform 0.25s ease;
+}
+
+.exit-popup.is-open .exit-popup-panel {
+  transform: translateY(0);
+}
+
+.exit-popup h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.exit-popup p {
+  margin: 0 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.exit-popup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.exit-popup-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-soft);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.exit-popup-panel {
+  position: relative;
+}
+
+/* Chat typing demo */
+.typing-demo {
+  display: grid;
+  gap: 0.65rem;
+  min-height: 12rem;
+}
+
+.typing-demo .bubble {
+  max-width: 88%;
+  padding: 0.7rem 0.85rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.typing-demo .bubble.in {
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+.typing-demo .bubble.out {
+  margin-left: auto;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff;
+}
+
+.typing-indicator {
+  display: inline-flex;
+  gap: 0.25rem;
+  padding: 0.65rem 0.8rem;
+  border-radius: 12px;
+  background: var(--surface);
+  width: fit-content;
+}
+
+.typing-indicator span {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--text-soft);
+  animation: typing-dot 1s ease-in-out infinite;
+}
+
+.typing-indicator span:nth-child(2) { animation-delay: 0.15s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes typing-dot {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* CRM sync demo highlight */
+.crm-sync-demo .lead-fields dd.is-updating {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+/* Portfolio filter transitions */
+.project-card {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.project-card.is-hiding {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+
+/* Form validation */
+.form-group.has-error input,
+.form-group.has-error textarea,
+.form-group.has-error select {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.field-error {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: #f87171;
+}
+
+.form-success-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.form-success-state .check {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  animation: pop-in 0.4s ease;
+}
+
+@keyframes pop-in {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Light mode override */
+html[data-theme="light"] {
+  --bg: #f4f4f5;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-raised: #fafafa;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-soft: #64748b;
+  --border: #e4e4e7;
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 16px 40px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 28px 70px rgba(15, 23, 42, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(15, 23, 42, 0.1);
+}
+
+html[data-theme="light"] body::before {
+  opacity: 0.03;
+  mix-blend-mode: multiply;
+}
+
+html[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Marquee */
+.logo-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.logo-marquee-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Testimonials carousel */
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+  padding-bottom: 0.5rem;
+}
+
+.testimonial-track::-webkit-scrollbar { display: none; }
+.testimonial-track.is-dragging { cursor: grabbing; }
+.testimonial-track .testimonial-card {
+  flex: 0 0 min(22rem, 85vw);
+  scroll-snap-align: start;
+}
+
+/* Social proof widget */
+.social-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.social-proof .dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.2);
+}
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-raised) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: skeleton 1.2s ease-in-out infinite;
+  border-radius: var(--radius);
+  min-height: 8rem;
+}
+
+@keyframes skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Icon tiles */
+.icon-tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.icon-tile svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.flow-step .icon-tile {
+  margin: 0 auto 0.75rem;
+}
+
+.icon-tile img {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  filter: invert(64%) sepia(72%) saturate(469%) hue-rotate(87deg) brightness(94%) contrast(92%);
+}
+
+.flow-step > span:not(.icon-tile) {
+  /* legacy numbered steps remain supported */
+}
+
+
+/* Reduced motion master kill-switch */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .gradient-text-animated,
+  .float-slow,
+  .featured-package::after,
+  .wa-float,
+  .logo-marquee-track,
+  .typing-indicator span,
+  .skeleton {
+    animation: none !important;
+  }
+
+  .cursor-spotlight {
+    display: none;
+  }
+
+  .sticky-audit {
+    transition: none;
+  }
+}

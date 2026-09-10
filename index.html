@@ -24,10 +24,13 @@
   <meta name="twitter:title" content="SolveonX | WhatsApp CRM Automation">
   <meta name="twitter:description" content="AI sales systems for Indian SMEs that reply, qualify, book, and update CRM automatically.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/geist/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/geist/Geist-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="stylesheet" href="css/theme.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=1">
+  <link rel="stylesheet" href="css/animations.css?v=1">
+  <link rel="stylesheet" href="css/redesign.css?v=2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,8 +54,10 @@
         SolveonX
       </a>
       <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
+        <a href="blog/index.html">Blog</a>
         <a href="index.html#results">Results</a>
         <a href="contact.html">Contact</a>
         <a href="demo.html">Demo</a>
@@ -63,8 +68,10 @@
       </button>
     </div>
     <nav class="nav-mobile container" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+        <a href="blog/index.html">Blog</a>
       <a href="index.html#results">Results</a>
       <a href="contact.html">Contact</a>
       <a href="demo.html">Demo</a>
@@ -91,9 +98,9 @@
             <span>Follow-ups</span>
           </div>
           <dl class="stats">
-            <div><dt class="stat-value">5 min</dt><dd class="stat-label">Target response window</dd></div>
-            <div><dt class="stat-value">24/7</dt><dd class="stat-label">Lead qualification</dd></div>
-            <div><dt class="stat-value">CRM</dt><dd class="stat-label">Always updated</dd></div>
+            <div class="stat-primary"><dt class="stat-value">5 min</dt><dd class="stat-label">Target response window</dd></div>
+            <div class="stat-secondary"><dt class="stat-value">24/7</dt><dd class="stat-label">Lead qualification</dd></div>
+            <div class="stat-secondary"><dt class="stat-value">CRM</dt><dd class="stat-label">Always updated</dd></div>
           </dl>
         </div>
         <div class="hero-visual" aria-label="Automation command center preview">
@@ -132,6 +139,8 @@
       </div>
     </section>
 
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" focusable="false"><path d="M0 56V28L1440 0v56H0z"/></svg></div>
+
     <section class="logos-section" aria-label="Industries we serve">
       <div class="container">
         <div class="logos-inner">
@@ -149,13 +158,15 @@
           <p class="section-desc">The problem is rarely demand. It is slow replies, scattered conversations, no follow-up owner, and no clean CRM record.</p>
         </header>
         <div class="card-grid card-grid-4">
-          <article class="card insight-card"><span class="card-icon">01</span><h3>Delayed first reply</h3><p>Buyers compare fast. A lead that waits usually talks to someone else.</p></article>
-          <article class="card insight-card"><span class="card-icon">02</span><h3>No qualification</h3><p>Your team spends time on low-intent chats while serious prospects wait.</p></article>
-          <article class="card insight-card"><span class="card-icon">03</span><h3>CRM gaps</h3><p>Important WhatsApp context never reaches your pipeline or dashboard.</p></article>
-          <article class="card insight-card"><span class="card-icon">04</span><h3>Forgotten follow-ups</h3><p>Revenue leaks when reminders depend on memory, notes, or manual sheets.</p></article>
+          <article class="card insight-card"><span class="card-icon icon-tile" aria-hidden="true"><img src="images/icons/clock.svg" alt="" width="20" height="20"></span><h3>Delayed first reply</h3><p>Buyers compare fast. A lead that waits usually talks to someone else.</p></article>
+          <article class="card insight-card"><span class="card-icon icon-tile" aria-hidden="true"><img src="images/icons/message.svg" alt="" width="20" height="20"></span><h3>No qualification</h3><p>Your team spends time on low-intent chats while serious prospects wait.</p></article>
+          <article class="card insight-card"><span class="card-icon icon-tile" aria-hidden="true"><img src="images/icons/database.svg" alt="" width="20" height="20"></span><h3>CRM gaps</h3><p>Important WhatsApp context never reaches your pipeline or dashboard.</p></article>
+          <article class="card insight-card"><span class="card-icon icon-tile" aria-hidden="true"><img src="images/icons/bell.svg" alt="" width="20" height="20"></span><h3>Forgotten follow-ups</h3><p>Revenue leaks when reminders depend on memory, notes, or manual sheets.</p></article>
         </div>
       </div>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" focusable="false"><path d="M0 56V28L1440 0v56H0z"/></svg></div>
 
     <section class="section section-alt" aria-labelledby="approach-heading">
       <div class="container">
@@ -165,14 +176,16 @@
           <p class="section-desc">We connect the places your team already works: WhatsApp, forms, calendars, sheets, CRM, and owner alerts.</p>
         </header>
         <ol class="flow">
-          <li class="flow-step"><span>01</span><h3>Lead enters</h3><p>Ad, website, referral, or QR</p></li>
-          <li class="flow-step"><span>02</span><h3>AI replies</h3><p>Context-aware WhatsApp response</p></li>
-          <li class="flow-step"><span>03</span><h3>Intent scored</h3><p>Budget, need, timeline captured</p></li>
-          <li class="flow-step"><span>04</span><h3>CRM updated</h3><p>Owner, stage, notes, task synced</p></li>
-          <li class="flow-step"><span>05</span><h3>Follow-up runs</h3><p>Reminders, booking, handoff</p></li>
+          <li class="flow-step"><span class="icon-tile" aria-hidden="true"><img src="images/icons/lead-in.svg" alt="" width="20" height="20"></span><h3>Lead enters</h3><p>Ad, website, referral, or QR</p></li>
+          <li class="flow-step"><span class="icon-tile" aria-hidden="true"><img src="images/icons/spark.svg" alt="" width="20" height="20"></span><h3>AI replies</h3><p>Context-aware WhatsApp response</p></li>
+          <li class="flow-step"><span class="icon-tile" aria-hidden="true"><img src="images/icons/chart.svg" alt="" width="20" height="20"></span><h3>Intent scored</h3><p>Budget, need, timeline captured</p></li>
+          <li class="flow-step"><span class="icon-tile" aria-hidden="true"><img src="images/icons/database.svg" alt="" width="20" height="20"></span><h3>CRM updated</h3><p>Owner, stage, notes, task synced</p></li>
+          <li class="flow-step"><span class="icon-tile" aria-hidden="true"><img src="images/icons/follow.svg" alt="" width="20" height="20"></span><h3>Follow-up runs</h3><p>Reminders, booking, handoff</p></li>
         </ol>
       </div>
     </section>
+
+    <div class="section-divider section-divider--flip" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" focusable="false"><path d="M0 56V28L1440 0v56H0z"/></svg></div>
 
     <section class="section" aria-labelledby="demo-flow-heading">
       <div class="container">
@@ -202,6 +215,8 @@
         </div>
       </div>
     </section>
+
+    <div class="section-divider" aria-hidden="true"><svg viewBox="0 0 1440 56" preserveAspectRatio="none" focusable="false"><path d="M0 56V28L1440 0v56H0z"/></svg></div>
 
     <section class="section section-alt" id="services" aria-labelledby="services-heading">
       <div class="container">
@@ -352,7 +367,8 @@
           <h3>Links</h3>
           <ul>
             <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="portfolio.html">Portfolio</a>
+        <a href="blog/index.html">Blog</a></li>
             <li><a href="demo.html">Demo</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="privacy.html">Privacy</a></li>
@@ -377,10 +393,22 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <script src="js/config.js?v=5"></script>
   <script src="js/projects.js?v=5"></script>
+  <script src="js/showcase-projects.js?v=1"></script>
   <script src="js/project-previews.js?v=1"></script>
-  <script src="js/main.js?v=6"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear(); mountFeaturedProjects("featured-projects", 3);</script>
+  <script src="js/scroll-animations.js?v=1"></script>
+  <script src="js/cursor-spotlight.js?v=1"></script>
+  <script src="js/counter-animation.js?v=1"></script>
+  <script src="js/whatsapp-typing-demo.js?v=1"></script>
+  <script src="js/crm-sync-demo.js?v=1"></script>
+  <script src="js/roi-calculator.js?v=1"></script>
+  <script src="js/exit-intent-popup.js?v=1"></script>
+  <script src="js/form-validation.js?v=1"></script>
+  <script src="js/ui-enhancements.js?v=1"></script>
+  <script src="js/main.js?v=7"></script>
+  <script>document.getElementById("year") && (document.getElementById("year").textContent = new Date().getFullYear()); if (typeof mountFeaturedProjects === "function") mountFeaturedProjects("featured-projects", 3);</script>
 </body>
 </html>

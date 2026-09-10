@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setActiveNav();
   initCookieBanner();
   initContactForm();
-  initRoiCalculator();
+  if (typeof initRoiCalculatorEnhanced === "function") initRoiCalculatorEnhanced();
+  else initRoiCalculator();
   mountTrustSectors("trust-sectors");
   mountTestimonials("testimonials-grid");
   mountBusinessTypeSelect("business-type");
@@ -13,6 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
+
+  // Phase 3–9 enhancers (no-ops if scripts not loaded on a page)
+  if (typeof initThemeToggle === "function") initThemeToggle();
+  if (typeof initStickyAuditButton === "function") initStickyAuditButton();
+  if (typeof initLogoMarquee === "function") initLogoMarquee();
+  if (typeof initTestimonialCarousel === "function") initTestimonialCarousel();
+  if (typeof initSocialProofWidget === "function") initSocialProofWidget();
+  if (typeof initHeroFloat === "function") initHeroFloat();
+  if (typeof initHomepageDemo === "function") initHomepageDemo();
+  if (typeof initCursorSpotlight === "function") initCursorSpotlight();
+  if (typeof initCounterAnimation === "function") initCounterAnimation();
+  if (typeof initScrollAnimations === "function") initScrollAnimations();
+  if (typeof initExitIntentPopup === "function") initExitIntentPopup();
+  if (typeof initFormValidation === "function") initFormValidation();
+  if (typeof enhancePortfolioFilterTransitions === "function") enhancePortfolioFilterTransitions();
 });
 
 function initNav() {
@@ -31,13 +47,32 @@ function initNav() {
 }
 
 function setActiveNav() {
-  const path = window.location.pathname.split("/").pop() || "index.html";
+  const path = window.location.pathname;
+  const isBlog = /\/blog(\/|$)/.test(path);
+  const isPortfolio = /\/portfolio(\/|$)/.test(path);
+  const currentFile = (path.split("/").pop() || "index.html").toLowerCase();
+
   document.querySelectorAll(".nav-desktop a, .nav-mobile a").forEach((a) => {
+    a.classList.remove("active");
     const href = a.getAttribute("href");
     if (!href || href.startsWith("#") || href.startsWith("http")) return;
-    const file = href.split("/").pop();
-    if (file === path || (path === "" && file === "index.html")) {
-      a.classList.add("active");
+
+    const cleanHref = href.replace(/^(\.\.\/|\.\/)+/, "").toLowerCase();
+
+    if (isBlog) {
+      if (cleanHref.includes("blog")) {
+        a.classList.add("active");
+      }
+    } else if (isPortfolio) {
+      if (cleanHref.includes("portfolio")) {
+        a.classList.add("active");
+      }
+    } else {
+      if (cleanHref.includes("#") || cleanHref.includes("blog")) return;
+      const targetFile = cleanHref.split("/").pop() || "index.html";
+      if (targetFile === currentFile || ((currentFile === "" || currentFile === "index.html") && targetFile === "index.html")) {
+        a.classList.add("active");
+      }
     }
   });
 }
@@ -53,6 +88,10 @@ function initWaLinks() {
 
 function getProjectDemoHref(project) {
   if (!project?.id) return "";
+  if (project.slug) {
+    const inPortfolioDir = /\/portfolio\//.test(window.location.pathname);
+    return inPortfolioDir ? `${project.slug}.html` : `portfolio/${project.slug}.html`;
+  }
   return `project.html?id=${encodeURIComponent(project.id)}`;
 }
 

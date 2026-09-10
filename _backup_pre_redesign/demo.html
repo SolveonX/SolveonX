@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <title>WhatsApp Automation Demo | SolveonX</title>
+  <meta name="description" content="Preview your SolveonX WhatsApp-first sales automation plan. Answer two questions and get a recommended lead capture, CRM, and follow-up stack.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://solveonx.com/demo.html">
+  <meta property="og:title" content="WhatsApp Automation Demo | SolveonX">
+  <meta property="og:url" content="https://solveonx.com/demo.html">
+  <meta property="og:image" content="https://solveonx.com/images/og-card.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=7">
+</head>
+<body class="page-wrap page-conversion">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark">SX</span> SolveonX</a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <a href="#" class="btn btn-primary" data-wa-message="Hi, I want a free automation audit">Free Audit</a>
+      </nav>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+    <nav class="nav-mobile container" aria-label="Mobile navigation">
+      <a href="#" class="btn btn-primary btn-block" data-wa-message="Hi, I want a free automation audit">Free Automation Audit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <header class="section-header center">
+          <p class="section-label">Demo</p>
+          <h1 class="section-title">Preview your lead recovery system</h1>
+          <p class="section-desc">Two short steps, then a suggested WhatsApp, CRM, booking, and follow-up workflow for your business.</p>
+        </header>
+
+        <div class="demo-progress" aria-hidden="true">
+          <span class="active"></span><span></span><span></span>
+        </div>
+
+        <div class="demo-panel card">
+          <div class="demo-step active" data-step="1">
+            <h2 style="font-size:1rem;margin:0 0 1rem">Step 1 - Business type</h2>
+            <div id="demo-business" class="option-grid option-grid-2"></div>
+            <button type="button" id="demo-next-1" class="btn btn-primary btn-block" style="margin-top:1.5rem" disabled>Continue</button>
+          </div>
+
+          <div class="demo-step" data-step="2">
+            <h2 style="font-size:1rem;margin:0 0 1rem">Step 2 - Where are leads leaking?</h2>
+            <div id="demo-needs" class="option-grid option-grid-2"></div>
+            <div class="demo-actions">
+              <button type="button" id="demo-back-2" class="btn btn-secondary" style="flex:1">Back</button>
+              <button type="button" id="demo-next-2" class="btn btn-primary" style="flex:1" disabled>View system</button>
+            </div>
+          </div>
+
+          <div class="demo-step" data-step="3">
+            <h2 style="font-size:1rem;margin:0 0 0.5rem">Step 3 — Your suggested system</h2>
+            <p id="demo-summary" style="font-size:0.9rem;color:var(--text-muted);margin:0 0 1rem"></p>
+            <div id="demo-package"></div>
+            <div id="demo-phases" class="demo-phases-card"></div>
+            <div id="demo-results"></div>
+            <div id="demo-improvements" class="card" style="margin-top:1rem;background:var(--bg);box-shadow:none"></div>
+            <a id="demo-wa" href="#" class="btn btn-primary btn-block" style="margin-top:1.25rem">Request free audit</a>
+            <button type="button" id="demo-reset" class="btn btn-secondary btn-block" style="margin-top:0.5rem;background:transparent;border:none;color:var(--text-soft)">Start over</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-site-footer="compact"></footer>
+  <a href="https://wa.me/918700863321" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.150-1.255-.463-2.390-1.475-.883-.788-1.480-1.761-1.653-2.059-.173-.297-.018-.458.130-.606.134-.133.298-.347.446-.520.149-.174.198-.298.298-.497.099-.198.050-.371-.025-.520-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.500-.669-.510l.003-.004A11.870 11.870 0 0012.050 0C5.495 0 .160 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.820 11.820 0 00-3.480-8.413z"/></svg></a>
+  <script src="js/config.js?v=5"></script>
+  <script src="js/main.js?v=6"></script>
+  <script src="js/demo.js?v=3"></script>
+</body>
+</html>

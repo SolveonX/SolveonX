@@ -11,10 +11,13 @@
   <meta property="og:title" content="Privacy Policy | SolveonX">
   <meta property="og:url" content="https://solveonx.com/privacy.html">
   <meta property="og:image" content="https://solveonx.com/images/og-card.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/geist/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/geist/Geist-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="stylesheet" href="css/theme.css?v=4">
+  <link rel="stylesheet" href="css/components.css?v=1">
+  <link rel="stylesheet" href="css/animations.css?v=1">
+  <link rel="stylesheet" href="css/redesign.css?v=2">
   <meta property="og:image" content="https://solveonx.com/images/og-card.svg">
 </head>
 <body class="page-wrap">
@@ -22,8 +25,10 @@
     <div class="container header-inner">
       <a href="index.html" class="logo"><span class="logo-mark">SX</span> SolveonX</a>
       <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="portfolio.html">Portfolio</a>
+        <a href="blog/index.html">Blog</a>
         <a href="index.html#results">Results</a>
         <a href="contact.html">Contact</a>
         <a href="demo.html">Demo</a>
@@ -32,8 +37,10 @@
       <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
     </div>
     <nav class="nav-mobile container" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
+        <a href="blog/index.html">Blog</a>
       <a href="contact.html">Contact</a>
       <a href="demo.html">Demo</a>
       <a href="#" class="btn btn-primary btn-block" data-wa-message="Hi, I want a free automation audit">Free Automation Audit</a>
@@ -96,6 +103,11 @@
   <footer class="site-footer" data-site-footer="compact"></footer>
   <a href="https://wa.me/918700863321" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l.003-.004A11.87 11.87 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg></a>
   <script src="js/config.js?v=5"></script>
-  <script src="js/main.js?v=6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="js/scroll-animations.js?v=1"></script>
+  <script src="js/ui-enhancements.js?v=1"></script>
+  <script src="js/exit-intent-popup.js?v=1"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>

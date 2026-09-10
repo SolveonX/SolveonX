@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaunchPad Academy | Find Your Track</title>
+  <style>
+    :root{--purple:#7c3aed;--orange:#f59e0b;--pink:#ec4899;--bg:#faf5ff;--text:#1e1b4b;--muted:#6b7280;--font:"Segoe UI",system-ui,sans-serif}
+    *{box-sizing:border-box;margin:0}
+    body{font-family:var(--font);background:var(--bg);color:var(--text)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem}
+    .logo{font-weight:800;font-size:1.1rem;background:linear-gradient(90deg,var(--purple),var(--orange));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .nav-links{display:flex;gap:1rem;font-size:.82rem;font-weight:600;color:var(--muted)}
+    .hero{padding:2.5rem 1.25rem;text-align:center;background:linear-gradient(180deg,#ede9fe,#faf5ff)}
+    .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;max-width:16ch;margin:0 auto}
+    .hero p{margin:1rem auto 0;max-width:28rem;color:var(--muted)}
+    .quiz{margin:1.5rem auto 0;display:inline-flex;padding:.85rem 1.4rem;border:none;border-radius:999px;background:linear-gradient(90deg,var(--purple),var(--pink));color:#fff;font-weight:800;font-size:.9rem;cursor:pointer}
+    .tracks{display:grid;gap:1rem;padding:2rem 1.25rem 3rem;max-width:56rem;margin:0 auto}
+    @media(min-width:640px){.tracks{grid-template-columns:repeat(3,1fr)}}
+    .track{padding:1.25rem;border-radius:20px;background:#fff;box-shadow:0 12px 40px rgba(124,58,237,.12);border:2px solid transparent;cursor:pointer;transition:.2s}
+    .track:hover{border-color:var(--purple);transform:translateY(-3px)}
+    .track span{display:inline-block;padding:.25rem .55rem;border-radius:999px;font-size:.7rem;font-weight:800;background:#ede9fe;color:var(--purple);margin-bottom:.6rem}
+    .track h3{font-size:1rem;margin-bottom:.35rem}
+    .track p{font-size:.82rem;color:var(--muted)}
+    .demo-tag{position:fixed;top:.5rem;left:50%;transform:translateX(-50%);background:#ede9fe;color:var(--purple);padding:.3rem .7rem;border-radius:999px;font-size:.7rem;font-weight:800}
+    .modal{position:fixed;inset:0;background:rgba(30,27,75,.5);display:none;align-items:center;justify-content:center;padding:1rem}
+    .modal.open{display:flex}
+    .modal-box{max-width:22rem;padding:1.5rem;border-radius:20px;background:#fff;text-align:center}
+    .modal-box button{margin-top:1rem;padding:.7rem 1.2rem;border:none;border-radius:999px;background:var(--orange);color:#fff;font-weight:800;cursor:pointer}
+  </style>
+</head>
+<body>
+  <span class="demo-tag">SOLVEONX DEMO · ONLINE ACADEMY</span>
+  <header class="nav">
+    <div class="logo">LaunchPad Academy</div>
+    <div class="nav-links"><span>Tracks</span><span>Outcomes</span><span>Mentors</span><span>Quiz</span></div>
+  </header>
+  <section class="hero">
+    <h1>Find the learning track that fits your next move</h1>
+    <p>Take a 2-step fit quiz, compare cohorts, and land in WhatsApp with full context for admissions.</p>
+    <button type="button" class="quiz" id="start-quiz">Take the fit quiz →</button>
+  </section>
+  <div class="tracks">
+    <article class="track" tabindex="0"><span>Career switch</span><h3>Digital Marketing Bootcamp</h3><p>12 weeks · Weekend batch · South Delhi</p></article>
+    <article class="track" tabindex="0"><span>Fast track</span><h3>Performance Marketing Sprint</h3><p>6 weeks · Evening cohort · Online</p></article>
+    <article class="track" tabindex="0"><span>Creative</span><h3>Content & Brand Systems</h3><p>8 weeks · Project-based learning</p></article>
+  </div>
+  <div class="modal" id="quiz-modal" role="dialog">
+    <div class="modal-box">
+      <h3 id="quiz-step">Are you a working professional or student?</h3>
+      <p style="font-size:.85rem;color:var(--muted);margin-top:.5rem" id="quiz-hint">Step 1 of 2</p>
+      <button type="button" id="quiz-next">Continue</button>
+    </div>
+  </div>
+  <script>
+    const modal=document.getElementById("quiz-modal");
+    const step=document.getElementById("quiz-step");
+    const hint=document.getElementById("quiz-hint");
+    const next=document.getElementById("quiz-next");
+    let n=0;
+    const steps=["Are you a working professional or student?","Which area do you want to grow in: marketing, content, or operations?"];
+    document.getElementById("start-quiz").onclick=()=>{n=0;step.textContent=steps[0];hint.textContent="Step 1 of 2";next.textContent="Continue";modal.classList.add("open");};
+    next.onclick=()=>{if(n===0){n=1;step.textContent=steps[1];hint.textContent="Step 2 of 2";next.textContent="See recommended track";}else{modal.classList.remove("open");demoToast("Demo: Opens WhatsApp with quiz answers + recommended batch");}};
+    modal.onclick=(e)=>{if(e.target===modal)modal.classList.remove("open");};
+  </script>
+  <link rel="stylesheet" href="demo-common.css">
+  <script src="demo-common.js"></script>
+</body>
+</html>

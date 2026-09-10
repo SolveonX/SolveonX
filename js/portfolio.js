@@ -178,6 +178,11 @@ document.addEventListener("DOMContentLoaded", () => {
   grid.addEventListener("click", (e) => {
     const openBtn = e.target.closest("[data-project-open]");
     if (!openBtn) return;
+    const project = PROJECTS.find((item) => item.id === openBtn.dataset.projectOpen);
+    if (project?.slug) {
+      window.location.href = getProjectDemoHref(project);
+      return;
+    }
     openModal(openBtn.dataset.projectOpen);
   });
 

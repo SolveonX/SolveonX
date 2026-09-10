@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <title>Portfolio - AI Automation and Website Projects | SolveonX</title>
+  <meta name="description" content="Browse SolveonX portfolio: WhatsApp automation, AI chatbots, CRM pipelines, and lead-gen websites built for Indian SMEs.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://solveonx.com/portfolio.html">
+  <meta property="og:title" content="Portfolio | SolveonX">
+  <meta property="og:description" content="Automation and AI projects delivered for SMEs.">
+  <meta property="og:url" content="https://solveonx.com/portfolio.html">
+  <meta property="og:image" content="https://solveonx.com/images/og-card.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=7">
+</head>
+<body class="page-wrap">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark">SX</span> SolveonX</a>
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="index.html#results">Results</a>
+        <a href="contact.html">Contact</a>
+        <a href="demo.html">Demo</a>
+        <a href="#" class="btn btn-primary" data-wa-message="Hi, I saw your portfolio and want a free automation audit">Free Audit</a>
+      </nav>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+    <nav class="nav-mobile container" aria-label="Mobile navigation">
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="index.html#results">Results</a>
+      <a href="contact.html">Contact</a>
+      <a href="demo.html">Demo</a>
+      <a href="#" class="btn btn-primary btn-block" data-wa-message="Hi, I saw your portfolio and want a free automation audit">Free Automation Audit</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <p class="section-label">Portfolio</p>
+        <h1>Explore systems built for real lead workflows</h1>
+        <p class="section-desc">Every project has a live interactive demo. Website builds open as standalone niche-themed sites — not extensions of this page. Click any card to explore.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="portfolio-toolbar">
+          <label class="portfolio-search">
+            <span class="sr-only">Search projects</span>
+            <input id="portfolio-search" type="search" placeholder="Search by industry, tool, or workflow">
+          </label>
+          <label class="portfolio-sort">
+            <span class="sr-only">Sort projects</span>
+            <select id="portfolio-sort">
+              <option value="featured">Featured first</option>
+              <option value="newest">Newest first</option>
+              <option value="category">Category</option>
+              <option value="sector">Sector</option>
+            </select>
+          </label>
+        </div>
+        <div id="portfolio-filters" class="filter-bar" role="tablist" aria-label="Filter projects by category"></div>
+        <div class="portfolio-meta">
+          <p id="portfolio-count" class="portfolio-count" aria-live="polite"></p>
+          <button type="button" id="portfolio-reset" class="filter-btn">Reset filters</button>
+        </div>
+        <div id="portfolio-grid" class="card-grid card-grid-2"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="project-modal" class="project-modal hidden" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <div class="project-modal-backdrop" data-project-close></div>
+    <div class="project-modal-panel">
+      <button type="button" class="project-modal-close" aria-label="Close project details" data-project-close>&times;</button>
+      <div id="project-modal-content"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer" data-site-footer="compact"></footer>
+  <a href="https://wa.me/918700863321" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l.003-.004A11.87 11.87 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg></a>
+  <script src="js/config.js?v=5"></script>
+  <script src="js/projects.js?v=5"></script>
+  <script src="js/project-previews.js?v=1"></script>
+  <script src="js/main.js?v=6"></script>
+  <script src="js/portfolio.js?v=5"></script>
+</body>
+</html>
